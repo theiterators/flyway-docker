@@ -12,6 +12,8 @@ docker run --rm -v /path/to/your/migrations:/sql -e FLYWAY_CMD=migrate -e DB_USE
 
 Remember to provide correct `/path/to/your/migrations` and env variables: `FLYWAY_CMD`, `DB_USER`, `DB_PASSWORD`, `DB_URL`.
 
+If you want to check conenction to your database before execute `FLYWAY_CMD` set `DB_CONNECTION_CHECK` env variable to true.
+
 ## Author & license
 
 If you have any questions regarding this project contact:
