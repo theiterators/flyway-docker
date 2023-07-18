@@ -1,14 +1,14 @@
 if [ -z ${DB_CONNECTION_CHECK+x} ];
-  then 
+  then
     echo "DB_CONNECTION_CHECK is not set. Skipping connection test";
   else
-    until flyway-4.0/flyway validate -url=$DB_URL -user=$DB_USER -password=$DB_PASSWORD;
+    until flyway-9.20.1/flyway validate -url=$DB_URL -user=$DB_USER -password=$DB_PASSWORD;
       do
         echo "DB is unavailable - sleeping";
         sleep 1
-      done 
+      done
       echo "DB is up and running";
 
 fi
 
-flyway-4.0/flyway $FLYWAY_CMD -url=$DB_URL -user=$DB_USER -password=$DB_PASSWORD -locations=filesystem:/sql
+flyway-9.20.1/flyway $FLYWAY_CMD -url=$DB_URL -user=$DB_USER -password=$DB_PASSWORD -locations=filesystem:/sql
